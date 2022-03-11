@@ -1,0 +1,30 @@
+/* CORE CSS */
+:root {
+  --nav-size: 3.5rem;
+  --txt-primary_color: #ebebeb;
+  --background-primary_color: #313131;
+  --background-secondary_color: #818181;
+}
+body {
+  background-color: var(--background-primary_color);
+  color: var(--txt-primary_color);
+}
+
+nav,
+.pageLimiter {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 144rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+ul li {
+  list-style-type: none;
+}
+main {
+  min-height: 100vh;
+  padding: calc(var(--nav-size) + 0.8rem) 1rem 1rem 1rem;
+}
