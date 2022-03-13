@@ -1,0 +1,53 @@
+/* CORE CSS */
+:root {
+  --nav-size: 48px;
+  --txt-primary_color: #999999;
+  --txt-secondary_color: #e6e6e6;
+  --background-primary_color: #242424;
+  --background-secondary_color: #3f3f3f;
+  --background-tertiary-color: #5abdeb;
+  --button-background-primary-color: #5abdeb;
+  --button-background-primary_hover-color: #4da4cc;
+  --button-background-primary_active-color: #5a88eb;
+}
+body {
+  background-color: var(--background-primary_color);
+  color: var(--txt-secondary_color);
+}
+
+nav,
+.pageLimiter {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1040px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+ul li {
+  list-style-type: none;
+}
+main {
+  min-height: calc(100vh - var(--nav-size));
+  padding: 0 0.8rem;
+}
+
+.elementsWrapper {
+  background: var(--background-primary_color);
+  border-radius: 2px;
+  border: 1px solid var(--background-secondary_color);
+  width: 100%;
+  padding: 0.2rem;
+  margin-bottom: 0.8rem;
+  box-sizing: border-box;
+}
+.containersBorder {
+  border-radius: 5px;
+  border: 1px solid var(--background-secondary_color);
+}
+
+.lastElement {
+  border-radius: 0 0 8px 8px;
+}

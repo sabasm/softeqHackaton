@@ -1,11 +1,9 @@
-import React from "react";
+import React from 'react'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer>
       <small>-Softeq team</small>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}

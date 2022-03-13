@@ -2,11 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Header = styled.header`
-  position: fixed;
   width: 100%;
   background: var(--background-primary_color);
   height: var(--nav-size);
-  --txt-primary_color: #ebebeb;
 `;
 
 const Navbar = styled.nav`
@@ -21,8 +19,8 @@ const NavAnchord = styled(Link)`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: var(--txt-primary_color);
   text-decoration: none;
