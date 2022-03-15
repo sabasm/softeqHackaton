@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const ContentWrapper = styled.aside`
-  min-height: 80vh;
+  min-height: 90vh;
   background: var(--background-secondary_color);
   /* background-color: red; */
   flex-grow: 6;

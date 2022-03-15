@@ -9,10 +9,10 @@ export const Navigation = ({ children }) => {
         <img
           title='Profile picture'
           alt='profile_picture'
-          src='https://cataas.com/cat/computer'
+          src='https://i.kym-cdn.com/photos/images/original/002/254/523/e1a.png'
         />
       </Styled.ProfilePicture>
-      <Styled.ProfileName>Username</Styled.ProfileName>
+      <Styled.ProfileName>[LH]JohnDide</Styled.ProfileName>
       <Menu />
       {children}
     </Styled.Menu>

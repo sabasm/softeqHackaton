@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <Styled.Header>
       <Styled.Navbar>
-        <Styled.NavAnchord to='/'>re_Spawn</Styled.NavAnchord>
+        <Styled.NavAnchord to='/'>Flash</Styled.NavAnchord>
       </Styled.Navbar>
     </Styled.Header>
   )

@@ -55,4 +55,38 @@ const Form = styled.form`
   }
 `
 
-export { Content, Title, Form }
+const Preview = styled.section`
+  background: var(--background-primary_color);
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+`
+const PreviewContainer = styled.section`
+  background: var(--background-secondary_color);
+  width: 100%;
+  /* min-height: 70vh; */
+  height: max-content;
+  margin-right: 1rem;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-around;
+`
+const PreviewElement = styled.article`
+  background: var(--background-primary_color);
+  min-height: 5vh;
+  width: 100%;
+  padding: 0.3rem;
+  box-sizing: border-box;
+  margin: 1rem 0;
+`
+
+export { Content, Title, Form, Preview, PreviewContainer, PreviewElement }

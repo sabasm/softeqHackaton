@@ -2,10 +2,8 @@ import styled from 'styled-components'
 
 const Menu = styled.aside`
   background: var(--background-secondary_color);
-  min-height: 60vh;
-  flex-grow: 3;
-  flex-shrink: 2;
-  max-width: 320px;
+  /* min-height: 60vh; */
+  width: 160px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
