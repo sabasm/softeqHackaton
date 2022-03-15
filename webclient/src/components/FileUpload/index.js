@@ -2,7 +2,6 @@ import React from 'react'
 
 const FileUpload = ({ formData, data, setData }) => {
   const changeHandler = event => {
-    console.log('img', event.target.name)
     let url = URL.createObjectURL(event.target.files[0])
     setData(prevState => ({
       ...prevState,

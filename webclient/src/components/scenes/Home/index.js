@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment, useRef, useState } from 'react'
 import { RowController, Button } from '../../../Styles/commonElements'
 import FileUpload from '../../FileUpload'
 import { Title } from '../commonComponents'
@@ -8,18 +8,26 @@ import Logo from '../../../Demo Files/Team designer - Legion 7i/Logo/legion.png'
 import Particles from '../../../Demo Files/Assets/Rocket League/Particles/fire-welding-sparks-png.png'
 import me from '../../../Demo Files/Assets/Rocket League/pics/Me-bg.png'
 import RlBg from '../../../Demo Files/Assets/Rocket League/Background/RlBg.png'
+import { Review } from '../Review'
 
 export const Home = () => {
+  const shoutRef = useRef(null)
   const formData = new FormData()
-  const [step, setStep] = React.useState(1)
-  const [data, setData] = React.useState({
+  const [deployed, setDeployed] = useState(false)
+  const [step, setStep] = useState(1)
+  const [data, setData] = useState({
     title: '',
     shortDescription: '',
     description: '',
     hashtags: [],
     url: '',
+    footer: '',
     assets: {}
   })
+
+  let cb = bool => {
+    setDeployed(bool)
+  }
 
   let sources = [
     { src: RlBg, x: 0, y: 0 },
@@ -28,10 +36,27 @@ export const Home = () => {
     { src: Logo, x: 1380, y: 200 }
   ]
 
-  const consoleData = () => {
-    console.log(data)
-
+  const nextStep = () => {
+    setDeployed(false)
+    setStep(step + 1)
   }
+  const goHome = () => {
+    setStep(1)
+    setData({
+      title: '',
+      shortDescription: '',
+      description: '',
+      hashtags: [],
+      url: '',
+      footer: '',
+      assets: {}
+    })
+  }
+
+  // const shout = () => {
+  //   discord_sendPayload(imageBlob, obj, data, cb)
+  //   nextStep()
+  // }
 
   return (
     <Content>
@@ -46,25 +71,38 @@ export const Home = () => {
           case 2:
             return (
               <Layouts
+                ref={shoutRef}
                 creating={true}
                 srcs={sources}
                 assets={data.assets}
                 formData={formData}
+                data={data}
+                cb={cb}
+                nextStep={nextStep}
               />
             )
           case 3:
-            return <span>Deploying posts...</span>
+            return <Review done={deployed} />
           default:
             return null
         }
       })()}
 
       <RowController>
-        <Button onClick={consoleData}>print</Button>
-        {step > 1 && (
-          <Button onClick={() => setStep(step - 1)}>Previous</Button>
+        {step === 1 && <Button onClick={nextStep}>Next</Button>}
+        {step === 2 && (
+          <Fragment>
+            <Button onClick={() => setStep(step - 1)}>Previous</Button>
+            {/* <Button onClick={shout} style={{ backgroundColor: 'peru' }}> */}
+            <Button
+              onClick={() => shoutRef.current.triggerShout()}
+              style={{ backgroundColor: 'peru' }}
+            >
+              Shout!
+            </Button>
+          </Fragment>
         )}
-        {step < 3 && <Button onClick={() => setStep(step + 1)}>Next</Button>}
+        {step >= 3 && <Button onClick={goHome}>Home</Button>}
       </RowController>
     </Content>
   )
@@ -113,6 +151,10 @@ const ShoutForm = ({ setData, data, formData }) => {
             name='description'
             value={data.description}
           />
+        </label>
+        <label>
+          <span>Footer</span>
+          <textarea onChange={handleChange} name='footer' value={data.footer} />
         </label>
       </div>
 
