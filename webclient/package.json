@@ -7,6 +7,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "discord.js": "^13.6.0",
     "html5-file-selector": "^2.1.0",
     "merge-images": "^2.0.0",
     "react": "^17.0.2",
@@ -15,7 +16,8 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webhook-discord": "^3.7.8"
   },
   "scripts": {
     "start": "react-scripts start",

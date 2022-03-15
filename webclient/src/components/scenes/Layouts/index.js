@@ -7,9 +7,9 @@ import mergeImages from 'merge-images'
 import background_placeholder from '../../../placeholders/background_placeholder.png'
 import picture_placeholder from '../../../placeholders/picture_placeholder.png'
 import logo_placeholder from '../../../placeholders/logo_placeholder.png'
+import { discord_sendMessage, discord_sendPayload } from './discordWebhook'
 let image
 export const Layouts = ({ creating, assets }) => {
-  console.log('assets = ', assets)
   const predefinedSelection = {
     1: [
       {
@@ -101,10 +101,13 @@ export const Layouts = ({ creating, assets }) => {
           {/* <button>twitter</button> */}
         </PreviewMenu>
       </Preview>
-      {!creating && (
+      {creating ? (
         <RowController>
-          <Button>Next</Button>
+          {/* <Button onClick={() => discord_sendPayload(image)}>post</Button> */}
+          {/* <Button onClick={() => discord_sendMessage()}>post</Button> */}
         </RowController>
+      ) : (
+        <RowController>{/* <Button>new predefined</Button> */}</RowController>
       )}
     </Content>
   )
